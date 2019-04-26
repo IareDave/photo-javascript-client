@@ -6,12 +6,118 @@
 
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <div class="messages">
+      <div id="endgame-message"></div>
+      <div id="showstats-message"></div>
+      <div id="newgame-message"></div>
+    </div>
+      <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            </div>
+      <div class="col-12 col-sm-6 content">
+        <div class="container-fluid tic-container">
+          <div class="row tic-row">
+            <div class="col-4 tic-box box1" id="0"></div>
+            <div class="col-4 tic-box box2" id="1"></div>
+            <div class="col-4 tic-box box3" id="2"></div>
+          </div>
+          <div class="row tic-row">
+            <div class="col-4 tic-box box4" id="3"></div>
+            <div class="col-4 tic-box box5" id="4"></div>
+            <div class="col-4 tic-box box6" id="5"></div>
+          </div>
+          <div class="row tic-row">
+            <div class="col-4 tic-box box7" id="6"></div>
+            <div class="col-4 tic-box box8" id="7"></div>
+            <div class="col-4 tic-box box9" id="8"></div>
+          </div>
+        </div>
+      </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<!--
+    <div class="buttons">
+    <button class="btn btn-primary">sign up</button>
+    <button class="btn btn-primary">sign in</button>
+  </div>
+-->
+<button class="btn btn-success end">end</button>
+
+  <div id="ui" class="overlay">
+    <div class="buttons">
+    <button class="btn btn-primary signUp">sign up</button>
+    <button class="btn btn-primary signIn">sign in</button>
+  </div>
+  <button class="btn btn-primary back">back</button>
+  <button class="btn btn-primary menusignup">sign up</button>
+  <button class="btn btn-primary menusignin">sign in</button>
+  <button id='reset-button' class="btn btn-primary menunewgame">new game</button>
+  <button id='show-stats' class="btn btn-primary menushowstats">shows stats</button>
+  <button id="sign-out" class="btn btn-primary menulogout">logout</button>
+  <button class="btn btn-primary menuchangepw">change password</button>
+
+
+
+  <div id="signout-message"></div>
+
+<div id="signup-message"></div>
+  <form id="sign-up" class="sign-up-form">
+    <h1>Sign up</h1>
+  <input class="form-control" name="credentials[email]" type="text" placeholder="Enter your email">
+  <input class="form-control" name="credentials[password]" type="password" placeholder="Enter your password">
+  <input class="form-control" name="credentials[password_confirmation]" type="password" placeholder="Confirm your password">
+  <input class="btn btn-success" type="submit" value="Sign Up!">
+</form>
+
+<div id="signin-message"></div>
+<form id="sign-in" class="sign-in-form">
+  <h1>Sign in</h1>
+  <input class="form-control" name="credentials[email]" type="text" placeholder="Enter your email">
+  <input class="form-control" name="credentials[password]" type="password" placeholder="Enter your password">
+  <input class="btn btn-success" type="submit" value="Sign In!">
+</form>
+
+<div id="changepassword-message"></div>
+<form id="change-password" class="change-password-form">
+  <h1>Change password</h1>
+  <input class="form-control" name="passwords[old]" placeholder="Enter old password" type="password">
+  <input class="form-control" name="passwords[new]" placeholder="Enter new password" type="password">
+  <input class="btn btn-success" type="submit" value="Change Password!">
+</form>
+</div>
+
+<!--
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="overlay">
+            <button class="btn btn-primary">sign up</button>
+            <button class="btn btn-primary">sign in</button>
+          </div>
+          <h3>sign in first</h3>
+          <p>
+            Provides a handy hover class which covers bootstrap panels and provides a button. Can be used for example to guide users to sign-in before interacting with the website.
+          </p>
+          <p>
+            You can manually set the height of the overlay class or use some table hack, or a library like jquery.matchheight.js . Let me know if you have a simple automatic css solution.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+-->
     </body>
 </html>

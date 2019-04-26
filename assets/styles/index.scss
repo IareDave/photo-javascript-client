@@ -1,1 +1,248 @@
 @import '~bootstrap/scss/bootstrap';
+
+// Color of tic-tac-toe boxes
+body {
+  background-color: grey;
+}
+
+.overlay {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: absolute;
+  flex-direction: row;
+  z-index: 2;
+  opacity: 0;
+  top: 100px;
+  bottom: 0;
+  left: 0;
+  right: 0px;
+  width: 425px;
+  margin: 0 auto;
+  height: 400px;
+  background: rgba(39, 42, 43, 0.8);
+  transition: opacity 200ms ease-in-out;
+  border-radius: 4px;
+  &:hover {
+    cursor: pointer;
+    opacity: 1;
+  }
+}
+
+.tic-box {
+  position: relative;
+  border: solid black 3px;
+  font-size: 5vw;
+  text-align: center;
+  color: blue;
+  width: 100px;
+  height: 100px;
+  border-top: 0;
+  border-right: 0;
+}
+
+.container-fluid {
+ position: absolute;
+ top: 100px;
+ bottom: 0;
+ left: 0;
+ right: 25px;
+ width: 400px;
+ margin: 0 auto;
+ height: 400px;
+}
+
+// Sets up tictactoe board
+.tic-box:first-child {
+  border-left: 0;
+}
+
+// Sets up tictactoe board
+.tic-box:first-child {
+  border-left: 0;
+}
+
+// Sets up tictactoe board
+.box7, .box8, .box9 {
+  border-bottom: 0;
+}
+
+.tic-box:hover {
+  background: #20948B;
+  cursor: pointer;
+}
+
+.btn-primary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-direction: column;
+  margin: 0 auto;
+  top: 100px;
+  margin-top: 10px;
+}
+
+.buttons {
+  position: absolute;
+  top: 100px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 300px;
+  margin: 0 auto;
+  height: 300px;
+}
+
+.sign-up-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  flex-direction: column;
+  margin: 0 auto;
+  top: 100px;
+}
+
+.sign-in-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  flex-direction: column;
+  margin: 0 auto;
+  top: 100px;
+}
+
+.change-password-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  flex-direction: column;
+  margin: 0 auto;
+  top: 100px;
+}
+
+.back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 250px;
+  right: 350px;
+  top: 100px;
+}
+
+.menusignup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 10px;
+  right: 172px;
+  top: 200px;
+}
+
+.menusignin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 10px;
+  right: 175px;
+  top: 250px;
+}
+
+.menunewgame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 150px;
+  right: 125px;
+  top: 00px;
+  width: 40%;
+}
+
+.menushowstats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 200px;
+  right: 125px;
+  top: 00px;
+  width: 40%;
+}
+
+.menulogout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 300px;
+  right: 125px;
+  top: 00px;
+  width: 40%;
+}
+
+.menuchangepw {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 250px;
+  right: 125px;
+  top: 00px;
+  width: 40%;
+}
+
+.end {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 250px;
+  right: 400px;
+  top: 200px;
+  z-index: 4;
+}
+
+.messages {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 100px;
+  right: 525px;
+  top: 00px;
+  font-size: 18px;
+  z-index: 3;
+}
+
+input {
+  margin: 5px;
+}
+
+h1 {
+  color: #20948B;
+}

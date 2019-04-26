@@ -1,11 +1,31 @@
 'use strict'
 
-// use require with a reference to bundle the file and use it in this file
-// const example = require('./example')
+// import { onPlayMade } from './auth/api'
+// import { showStats } from './auth/api';
 
-// use require without a reference to ensure a file is bundled
-// require('./example')
+const userEvents = require('./auth/events.js')
 
 $(() => {
-  // your JS code goes here
+  // Api handlers
+  $('#signup-message').hide()
+  $('#signin-message').hide()
+  $('#changepassword-message').hide()
+  // $('.container-fluid').hide()
+  $('#reset-button').hide()
+  $('#show-stats').hide()
+  $('#sign-out').hide()
+  $('.sign-in-form').hide()
+  $('.sign-up-form').hide()
+  $('.back').hide()
+  $('.menusignup').hide()
+  $('.menusignin').hide()
+  $('.menunewgame').hide()
+  $('.menushowstats').hide()
+  $('.menulogout').hide()
+  $('.menuchangepw').hide()
+  $('.end').hide()
+  // $('#sign-in').hide()
+  $('#change-password').hide()
+
+  userEvents.addHandlers()
 })
