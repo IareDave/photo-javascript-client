@@ -40,26 +40,6 @@ export const signOut = function () {
   })
 }
 
-export const newGame = function () {
-  return $.ajax({
-    url: config.apiUrl + `/games`,
-    method: 'POST',
-    headers: {
-      Authorization: 'Token token=' + (store.user ? store.user.token : '')
-    }
-  })
-}
-
-export const showStats = function () {
-  return $.ajax({
-    url: config.apiUrl + `/games`,
-    method: 'GET',
-    headers: {
-      Authorization: 'Token token=' + (store.user ? store.user.token : '')
-    }
-  })
-}
-
 export const onPlayMade = function (index, currentPlayer, gameIsOver) {
   return $.ajax({
     url: config.apiUrl + `/games/${(store.game ? store.game.id : '')}`,
