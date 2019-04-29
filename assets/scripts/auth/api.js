@@ -40,21 +40,46 @@ export const signOut = function () {
   })
 }
 
-export const onPlayMade = function (index, currentPlayer, gameIsOver) {
+export const deletePic = function (data) {
   return $.ajax({
-    url: config.apiUrl + `/games/${(store.game ? store.game.id : '')}`,
+    url: config.apiUrl + `/pictures/${store.id}`,
+    method: 'DELETE',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    },
+    data
+  })
+}
+
+export const updatePic = function (data) {
+  return $.ajax({
+    url: config.apiUrl + `/pictures/${store.id}`,
     method: 'PATCH',
     headers: {
-      Authorization: 'Token token=' + (store.user ? store.user.token : '')
+      Authorization: `Token token=${store.user.token}`
     },
-    data: {
-      'game': {
-        'cell': {
-          'index': index,
-          'value': currentPlayer
-        },
-        'over': gameIsOver
-      }
-    }
+    data
+  })
+}
+
+export const createPic = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/pictures',
+    method: 'POST',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    },
+    data
+  })
+}
+
+export const showPic = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/pictures',
+    method: 'GET',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    },
+    data
   })
 }

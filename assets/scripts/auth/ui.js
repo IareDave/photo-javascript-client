@@ -1,6 +1,24 @@
 'use strict'
 
 const store = require('../store.js')
+const showWorkoutsTemplate = require('../templates/workout-log.handlebars')
+
+export const onCreatePicSuccess = function (data) {
+  $('form').trigger('reset')
+  console.log('hey')
+}
+
+export const onShowPicSuccess = function (response) {
+  $('form').trigger('reset')
+  const showWorkoutsHtml = showWorkoutsTemplate({ pictures: response.pictures })
+  $('.workout-log').html(showWorkoutsHtml)
+  $('#workout-log').show()
+  if (response.pictures.length === 0) {
+    $('#view-empty-message').fadeTo(2000, 500).slideUp(500, function () {
+      $('#view-empty-message').slideUp(500)
+    })
+  }
+}
 
 export const signUpSuccess = function (data) {
   $('form').trigger('reset')
@@ -26,7 +44,6 @@ export const signUpFailure = function (data) {
 
 export const signInSuccess = function (data) {
   store.user = data.user
-  store.game = data.game
   $('form').trigger('reset')
   $('#reset-button').show()
   $('#signin-message').show()
@@ -41,6 +58,7 @@ export const signInSuccess = function (data) {
   $('.menunewgame').show()
   $('.menushowstats').show()
   $('.menulogout').show()
+  $('.menudelete').show()
   $('.menusignin').hide()
   $('.menusignup').hide()
   $('.menuchangepw').show()
@@ -65,6 +83,7 @@ export const changePwSuccess = function (data) {
   $('#signout-message').text('')
   $('#endgame-message').text('')
   $('.menushowstats').show()
+  $('.menudelete').show()
   $('.menunewgame').show()
   $('.menulogout').show()
   $('.menuchangepw').show()
@@ -93,6 +112,7 @@ export const signOutSuccess = function (data) {
   $('#endgame-message').text('')
   $('#sign-up').hide()
   $('.menusignup').show()
+  $('.menudelete').hide()
   $('.menusignin').show()
   $('.menuchangepw').hide()
   $('.back').hide()

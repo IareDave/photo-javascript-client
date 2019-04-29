@@ -5,6 +5,17 @@ body {
   background-color: grey;
 }
 
+.hover-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  flex-direction: row;
+  margin: 0 auto;
+  background-color: red;
+  width: 10%;
+}
+
 .overlay {
   display: flex;
   justify-content: center;
@@ -17,9 +28,9 @@ body {
   bottom: 0;
   left: 0;
   right: 0px;
-  width: 425px;
+  width: 75%;
   margin: 0 auto;
-  height: 400px;
+  height: 75%;
   background: rgba(39, 42, 43, 0.8);
   transition: opacity 200ms ease-in-out;
   border-radius: 4px;
@@ -114,6 +125,16 @@ body {
   top: 100px;
 }
 
+.create-pic-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  flex-direction: column;
+  margin: 0 auto;
+  top: 100px;
+}
+
 .change-password-form {
   display: flex;
   justify-content: center;
@@ -132,7 +153,6 @@ body {
   flex-direction: column;
   margin: 0 auto;
   margin-top: 250px;
-  right: 350px;
   top: 100px;
 }
 
@@ -144,7 +164,6 @@ body {
   flex-direction: column;
   margin: 0 auto;
   margin-top: 10px;
-  right: 172px;
   top: 200px;
 }
 
@@ -156,7 +175,6 @@ body {
   flex-direction: column;
   margin: 0 auto;
   margin-top: 10px;
-  right: 175px;
   top: 250px;
 }
 
@@ -168,7 +186,6 @@ body {
   flex-direction: column;
   margin: 0 auto;
   margin-top: 150px;
-  right: 125px;
   top: 00px;
   width: 40%;
 }
@@ -181,7 +198,6 @@ body {
   flex-direction: column;
   margin: 0 auto;
   margin-top: 200px;
-  right: 125px;
   top: 00px;
   width: 40%;
 }
@@ -193,8 +209,19 @@ body {
   position: absolute;
   flex-direction: column;
   margin: 0 auto;
-  margin-top: 300px;
-  right: 125px;
+  margin-top: 350px;
+  top: 00px;
+  width: 40%;
+}
+
+.menudelete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 250px;
   top: 00px;
   width: 40%;
 }
@@ -206,8 +233,7 @@ body {
   position: absolute;
   flex-direction: column;
   margin: 0 auto;
-  margin-top: 250px;
-  right: 125px;
+  margin-top: 300px;
   top: 00px;
   width: 40%;
 }

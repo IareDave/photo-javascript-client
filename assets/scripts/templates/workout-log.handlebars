@@ -1,0 +1,13 @@
+{{#each pictures as |picture|}}
+  {{log picture}}
+
+<div class="picture" data-id="{{picture.id}}">
+  <ul>
+    <h2>Pictures</h2>
+      <li>URL is{{picture.url}}</li>
+      <img src="{{picture.url}}">
+</ul>
+  <hr>
+</div>
+
+{{/each}}

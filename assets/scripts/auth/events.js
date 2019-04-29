@@ -3,7 +3,6 @@
 const getFormFields = require('./../../../lib/get-form-fields.js')
 const api = require('./api.js')
 const ui = require('./ui.js')
-const store = require('../store.js')
 
 let backCounter = 0
 let anotherCounter = 0
@@ -83,6 +82,7 @@ export const signUpMenu = function (data) {
   $('#change-password').hide()
   $('.menusignin').hide()
   $('.menusignup').hide()
+  $('.menudelete').hide()
 }
 
 export const signInMenu = function (data) {
@@ -94,6 +94,7 @@ export const signInMenu = function (data) {
   $('.sign-up-form').hide()
   $('.menusignup').hide()
   $('.menusignin').hide()
+  $('.menudelete').hide()
 }
 
 export const changePwMenu = function (data) {
@@ -102,11 +103,32 @@ export const changePwMenu = function (data) {
   $('.sign-in-form').hide()
   $('.sign-up-form').hide()
   $('.menusignup').hide()
+  $('.menudelete').hide()
   $('.menulogout').hide()
   $('.menushowstats').hide()
   $('.menunewgame').hide()
   $('.menuchangepw').hide()
   $('#change-password').show()
+  $('#endgame-message').text('')
+  $('#showstats-message').text('')
+  $('#newgame-message').text('')
+  $('#signout-message').text('')
+  $('#signup-message').hide()
+  $('#signin-message').hide()
+}
+
+export const createPicMenu = function (data) {
+  anotherCounter += 1
+  $('.back').show()
+  $('.sign-in-form').hide()
+  $('.sign-up-form').hide()
+  $('.menudelete').hide()
+  $('.menusignup').hide()
+  $('.menulogout').hide()
+  $('.menushowstats').hide()
+  $('.menunewgame').hide()
+  $('.menuchangepw').hide()
+  $('.create-pic-form').show()
   $('#endgame-message').text('')
   $('#showstats-message').text('')
   $('#newgame-message').text('')
@@ -122,7 +144,9 @@ export const backButton = function (data) {
     $('.menulogout').show()
     $('.menushowstats').show()
     $('.menunewgame').show()
+    $('.menudelete').show()
     $('.menuchangepw').show()
+    $('.create-pic-form').hide()
     $('#change-password').hide()
     return
   }
@@ -133,6 +157,7 @@ export const backButton = function (data) {
     $('.signUp').hide()
     $('.menusignup').show()
     $('.menusignin').show()
+    // $('.menudelete').show()
     $('#change-password').hide()
     backCounter -= 1
   }
@@ -143,6 +168,28 @@ export const endButton = function (data) {
   $('.end').hide()
 }
 
+export const onCreatePic = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.createPic(data)
+    .then(ui.onCreatePicSuccess)
+    .catch(ui.showStatsFailure)
+}
+
+export const onShowPic = function (event) {
+  event.preventDefault()
+  api.showPic()
+    .then(ui.onShowPicSuccess)
+    .catch(ui.showStatsFailure)
+}
+
+export const onDeletePic = function (event) {
+  event.preventDefault()
+  api.deletePic()
+    .then(ui.onShowPicSuccess)
+    .catch(ui.showStatsFailure)
+}
+
 export const addHandlers = function () {
   $('#sign-up').on('submit', onSignUp)
   $('.end').on('click', endButton)
@@ -150,11 +197,13 @@ export const addHandlers = function () {
   $('.signUp').on('click', signUpForm)
   $('.menusignup').on('click', signUpMenu)
   $('.menusignin').on('click', signInMenu)
+  $('.menudelete').on('click', onDeletePic)
   $('.menuchangepw').on('click', changePwMenu)
   $('.signIn').on('click', signInForm)
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
   $('#sign-out').on('click', onSignOut)
-  $('#reset-button').on('click', onNewGame)
-  $('#show-stats').on('click', onShowStats)
+  $('#reset-button').on('click', createPicMenu)
+  $('#create-pic').on('submit', onCreatePic)
+  $('#show-stats').on('click', onShowPic)
 }
