@@ -4,10 +4,11 @@
 <div class="picture" data-id="{{picture.id}}">
   <ul>
     <h2>Pictures</h2>
-      <li>URL is{{picture.url}}</li>
+      <p data-id"{{picture.id}}">{{picture.name}} uploaded this:</p>
       <img src="{{picture.url}}">
 </ul>
   <hr>
 </div>
-
+<button  data-id="{{picture.id}}" class="btn btn-danger delete">Remove</button>
+<button  data-id="{{picture.id}}" class="btn btn-warning update">Update</button>
 {{/each}}

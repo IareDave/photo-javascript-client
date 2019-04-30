@@ -5,7 +5,10 @@ const showWorkoutsTemplate = require('../templates/workout-log.handlebars')
 
 export const onCreatePicSuccess = function (data) {
   $('form').trigger('reset')
-  console.log('hey')
+}
+
+export const onDeletePicSuccess = function (data) {
+  $('form').trigger('reset')
 }
 
 export const onShowPicSuccess = function (response) {
@@ -116,6 +119,7 @@ export const signOutSuccess = function (data) {
   $('.menusignin').show()
   $('.menuchangepw').hide()
   $('.back').hide()
+  $('#workout-log').hide()
   store.user = null
   store.game = null
 }

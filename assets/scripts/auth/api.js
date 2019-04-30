@@ -42,23 +42,23 @@ export const signOut = function () {
 
 export const deletePic = function (data) {
   return $.ajax({
-    url: config.apiUrl + `/pictures/${store.id}`,
+    url: config.apiUrl + `/pictures/${store.deleteId}`,
     method: 'DELETE',
     headers: {
       Authorization: `Token token=${store.user.token}`
     },
-    data
+    data: data
   })
 }
 
 export const updatePic = function (data) {
   return $.ajax({
-    url: config.apiUrl + `/pictures/${store.id}`,
+    url: config.apiUrl + `/pictures/${store.updateId}`,
     method: 'PATCH',
     headers: {
       Authorization: `Token token=${store.user.token}`
     },
-    data
+    data: data
   })
 }
 

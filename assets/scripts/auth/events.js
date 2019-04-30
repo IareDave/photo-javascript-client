@@ -3,6 +3,7 @@
 const getFormFields = require('./../../../lib/get-form-fields.js')
 const api = require('./api.js')
 const ui = require('./ui.js')
+const store = require('../store.js')
 
 let backCounter = 0
 let anotherCounter = 0
@@ -129,6 +130,8 @@ export const createPicMenu = function (data) {
   $('.menunewgame').hide()
   $('.menuchangepw').hide()
   $('.create-pic-form').show()
+  $('.update-pic-form').hide()
+  $('.delete-pic-form').hide()
   $('#endgame-message').text('')
   $('#showstats-message').text('')
   $('#newgame-message').text('')
@@ -137,7 +140,65 @@ export const createPicMenu = function (data) {
   $('#signin-message').hide()
 }
 
-export const backButton = function (data) {
+export const deletePicMenu = function (data) {
+  anotherCounter += 1
+  $('.back').show()
+  $('.sign-in-form').hide()
+  $('.sign-up-form').hide()
+  $('.menudelete').hide()
+  $('.menusignup').hide()
+  $('.menulogout').hide()
+  $('.menushowstats').hide()
+  $('.menunewgame').hide()
+  $('.menuchangepw').hide()
+  $('.create-pic-form').hide()
+  $('.update-pic-form').hide()
+  $('.delete-pic-form').show()
+  $('#endgame-message').text('')
+  $('#showstats-message').text('')
+  $('#newgame-message').text('')
+  $('#signout-message').text('')
+  $('#signup-message').hide()
+  $('#signin-message').hide()
+}
+
+export const updatePicMenu = function (event) {
+  anotherCounter += 1
+  $('.back').show()
+  $('.sign-in-form').hide()
+  $('.sign-up-form').hide()
+  $('.menudelete').hide()
+  $('.menusignup').hide()
+  $('.menulogout').hide()
+  $('.menushowstats').hide()
+  $('.menunewgame').hide()
+  $('.menuchangepw').hide()
+  $('.create-pic-form').hide()
+  $('.update-pic-form').show()
+  $('.delete-pic-form').hide()
+  $('#endgame-message').text('')
+  $('#showstats-message').text('')
+  $('#newgame-message').text('')
+  $('#signout-message').text('')
+  $('#signup-message').hide()
+  $('#signin-message').hide()
+}
+
+export const hideMenu = function () {
+  $('#ui').addClass('hiddenMenu')
+  $('.relap').removeClass('relapclose')
+  $('.colap').hide()
+  $('.relap').show()
+}
+
+export const showMenu = function () {
+  $('#ui').removeClass('hiddenMenu')
+  $('.relap').addClass('relapclose')
+  $('.colap').show()
+  $('.relap').hide()
+}
+
+export const backButton = function () {
   $('.back').hide()
   if (anotherCounter === 1) {
     anotherCounter -= 1
@@ -147,6 +208,8 @@ export const backButton = function (data) {
     $('.menudelete').show()
     $('.menuchangepw').show()
     $('.create-pic-form').hide()
+    $('.delete-pic-form').hide()
+    $('.update-pic-form').hide()
     $('#change-password').hide()
     return
   }
@@ -185,8 +248,19 @@ export const onShowPic = function (event) {
 
 export const onDeletePic = function (event) {
   event.preventDefault()
-  api.deletePic()
-    .then(ui.onShowPicSuccess)
+  // const id = $(event.target).data('id')
+  store.deleteId = $(event.target).data('id')
+  api.deletePic(store.deleteId)
+    .then(() => onShowPic(event))
+    .catch(ui.showStatsFailure)
+}
+
+export const onUpdatePic = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  // const id = store.updateId = $(event.target).data('id')
+  api.updatePic(data)
+    .then(() => onShowPic(event))
     .catch(ui.showStatsFailure)
 }
 
@@ -205,5 +279,11 @@ export const addHandlers = function () {
   $('#sign-out').on('click', onSignOut)
   $('#reset-button').on('click', createPicMenu)
   $('#create-pic').on('submit', onCreatePic)
+  $('#update-pic').on('submit', onUpdatePic)
+  // $('#delete-pic').on('submit', onDeletePic)
+  $('#workout-log').on('click', '.delete', onDeletePic)
+  $('#workout-log').on('click', '.update', updatePicMenu)
   $('#show-stats').on('click', onShowPic)
+  $('.collap').on('click', hideMenu)
+  $('.relap').on('click', showMenu)
 }
