@@ -42,7 +42,7 @@ export const signOut = function () {
 
 export const deletePic = function (data) {
   return $.ajax({
-    url: config.apiUrl + `/pictures/${store.deleteId}`,
+    url: config.apiUrl + `/pictures/${data}`,
     method: 'DELETE',
     headers: {
       Authorization: `Token token=${store.user.token}`
@@ -53,7 +53,7 @@ export const deletePic = function (data) {
 
 export const updatePic = function (data) {
   return $.ajax({
-    url: config.apiUrl + `/pictures/${store.updateId}`,
+    url: config.apiUrl + `/pictures/${data}`,
     method: 'PATCH',
     headers: {
       Authorization: `Token token=${store.user.token}`

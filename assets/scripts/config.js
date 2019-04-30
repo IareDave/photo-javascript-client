@@ -2,7 +2,7 @@
 
 let apiUrl
 const apiUrls = {
-  production: 'https://sleepy-island-31782.herokuapp.com/',
+  production: 'https://sleepy-island-31782.herokuapp.com',
   development: 'http://localhost:4741'
 }
 
