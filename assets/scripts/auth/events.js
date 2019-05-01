@@ -183,7 +183,6 @@ export const updatePicMenu = function (event) {
   $('#signup-message').hide()
   $('#signin-message').hide()
   store.id = $(event.target).data('id')
-  console.log(store.id)
 }
 
 export const hideMenu = function () {
