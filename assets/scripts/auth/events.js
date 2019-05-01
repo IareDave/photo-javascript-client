@@ -182,6 +182,8 @@ export const updatePicMenu = function (event) {
   $('#signout-message').text('')
   $('#signup-message').hide()
   $('#signin-message').hide()
+  store.id = $(event.target).data('id')
+  console.log(store.id)
 }
 
 export const hideMenu = function () {
@@ -248,9 +250,8 @@ export const onShowPic = function (event) {
 
 export const onDeletePic = function (event) {
   event.preventDefault()
-  // const id = $(event.target).data('id')
-  store.deleteId = $(event.target).data('id')
-  api.deletePic(store.deleteId)
+  const id = $(event.target).data('id')
+  api.deletePic(id)
     .then(() => onShowPic(event))
     .catch(ui.showStatsFailure)
 }
@@ -258,7 +259,6 @@ export const onDeletePic = function (event) {
 export const onUpdatePic = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  // const id = store.updateId = $(event.target).data('id')
   api.updatePic(data)
     .then(() => onShowPic(event))
     .catch(ui.showStatsFailure)

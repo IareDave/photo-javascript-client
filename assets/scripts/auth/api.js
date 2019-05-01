@@ -47,13 +47,13 @@ export const deletePic = function (data) {
     headers: {
       Authorization: `Token token=${store.user.token}`
     },
-    data: data
+    data
   })
 }
 
 export const updatePic = function (data) {
   return $.ajax({
-    url: config.apiUrl + `/pictures/${data}`,
+    url: config.apiUrl + `/pictures/${store.id}`,
     method: 'PATCH',
     headers: {
       Authorization: `Token token=${store.user.token}`
