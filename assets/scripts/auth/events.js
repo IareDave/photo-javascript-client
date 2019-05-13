@@ -164,6 +164,7 @@ export const deletePicMenu = function (data) {
 
 export const updatePicMenu = function (event) {
   anotherCounter += 1
+  store.id = $(event.target).data('id')
   $('.back').show()
   $('.sign-in-form').hide()
   $('.sign-up-form').hide()
@@ -182,7 +183,6 @@ export const updatePicMenu = function (event) {
   $('#signout-message').text('')
   $('#signup-message').hide()
   $('#signin-message').hide()
-  store.id = $(event.target).data('id')
 }
 
 export const hideMenu = function () {

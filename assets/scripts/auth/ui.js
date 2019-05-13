@@ -1,7 +1,6 @@
 'use strict'
 
 const store = require('../store.js')
-const showWorkoutsTemplate = require('../templates/workout-log.handlebars')
 
 export const onCreatePicSuccess = function (data) {
   $('form').trigger('reset')
@@ -13,6 +12,7 @@ export const onDeletePicSuccess = function (data) {
 
 export const onShowPicSuccess = function (response) {
   $('form').trigger('reset')
+  const showWorkoutsTemplate = require('../templates/workout-log.handlebars')
   const showWorkoutsHtml = showWorkoutsTemplate({ pictures: response.pictures })
   $('.workout-log').html(showWorkoutsHtml)
   $('#workout-log').show()
