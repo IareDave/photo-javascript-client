@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Example</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link href="https://fonts.googleapis.com/css?family=Abhaya+Libre" rel="stylesheet">
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+    <div class="messages">
+      <div id="endgame-message"></div>
+      <div id="showstats-message"></div>
+      <div id="newgame-message"></div>
+    </div>
+    <button class="btn btn-success relap">menu</button>
+
+  <div id="ui" class="overlay">
+    <button class="btn btn-danger collap">hide</button>
+    <div class="buttons">
+    <button class="width btn btn-primary signUp">sign up</button>
+    <button class="width btn btn-primary signIn">sign in</button>
+  </div>
+
+  <button class="width btn btn-primary back">back</button>
+  <button class="width btn btn-primary menusignup">sign up</button>
+  <button class="width btn btn-primary menusignin">sign in</button>
+  <button id='reset-button' class="btn btn-primary menunewgame">upload picture</button>
+  <button id='show-stats' class="btn btn-primary menushowstats">show pictures</button>
+  <button id="sign-out" class="btn btn-primary menulogout">logout</button>
+  <button class="btn btn-primary menuchangepw">change password</button>
+
+  <div id="signout-message"></div>
+<div id="signup-message"></div>
+  <form id="sign-up" class="sign-up-form">
+    <h1>Sign Up</h1>
+  <input class="ripple form-control" name="credentials[email]" type="text" placeholder="Enter your email">
+  <input class="ripple form-control" name="credentials[password]" type="password" placeholder="Enter your password">
+  <input class="ripple form-control" name="credentials[password_confirmation]" type="password" placeholder="Confirm your password">
+  <input class="width btn btn-success testt" type="submit" value="Sign Up!">
+</form>
+
+<div id="signin-message"></div>
+<form id="sign-in" class="sign-in-form">
+  <h1>Sign In</h1>
+  <input class="ripple form-control" name="credentials[email]" type="text" placeholder="Enter your email">
+  <input class="ripple form-control" name="credentials[password]" type="password" placeholder="Enter your password">
+  <input class="width btn btn-success" type="submit" value="Sign In!">
+</form>
+
+<div id="changepassword-message"></div>
+<form id="change-password" class="change-password-form">
+  <h1>Change Password</h1>
+  <input class="ripple form-control" name="passwords[old]" placeholder="Enter old password" type="password">
+  <input class="ripple form-control" name="passwords[new]" placeholder="Enter new password" type="password">
+  <input class="width btn btn-success" type="submit" value="Change Password!">
+</form>
+
+<form id="create-pic" class="create-pic-form">
+  <h1>Upload Picture</h1>
+<input class="ripple form-control" name="picture[url]" type="text" placeholder="Enter the photo URL">
+<input class="width btn btn-success" type="submit" value="Upload!">
+</form>
+
+<form id="delete-pic" class="delete-pic-form">
+  <h1>Delete Picture</h1>
+<input class="ripple form-control" name="picture[url]" type="text" placeholder="Enter the photo URL">
+<input class="width btn btn-success" type="submit" value="Upload!">
+</form>
+
+<form id="update-pic" class="update-pic-form">
+  <h1>Update Picture</h1>
+<input class="ripple form-control" name="picture[url]" type="text" placeholder="Enter the photo URL">
+<input class="width btn btn-success" type="submit" value="Update!">
+</form>
+</div>
+
+<div id="workout-log" class="workout-log"></div>
+
+</body>
+</html>
