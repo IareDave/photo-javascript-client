@@ -16,8 +16,8 @@ With the HTML skeleton and backend for user auth/pictures done, I then spent mos
 I was not able to finish an additional resource that would tie user -> pictures -> albums. The addition of albums would allow me to give user functionality to group their pictures and have them define their own collections of resources. The problem with this approach is as user collections grow in number, page load takes considerably more time as the photos are rendered each time a user sends a GET request to the api.
 
 # Wireframes
-![alt text](https://imgur.com/a/Jr8nK32)
-![alt text](https://imgur.com/a/DCQ56zU)
+![alt text](https://i.imgur.com/ntqoebD.png)
+![alt text](https://i.imgur.com/4Tr1gX7.png)
 
 The login page is a bootstrap overlay. After user authentication is approved,
 the login page is hidden from view and the application is made available on the present viewport.
